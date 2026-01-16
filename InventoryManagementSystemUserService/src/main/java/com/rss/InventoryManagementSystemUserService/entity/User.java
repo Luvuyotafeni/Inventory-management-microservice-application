@@ -1,17 +1,20 @@
 package com.rss.InventoryManagementSystemUserService.entity;
 
+import com.rss.InventoryManagementSystemUserService.Enum.Role;
+import com.rss.InventoryManagementSystemUserService.Enum.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "users")
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(name = "users")
 public class User {
 
     @Id
