@@ -8,6 +8,7 @@ import com.rss.InventoryManagementSystemUserService.entity.Credentials;
 import com.rss.InventoryManagementSystemUserService.entity.User;
 import com.rss.InventoryManagementSystemUserService.repository.CredentialsRepository;
 import com.rss.InventoryManagementSystemUserService.repository.UserRepository;
+import com.rss.InventoryManagementSystemUserService.security.JwtProvider;
 import com.rss.InventoryManagementSystemUserService.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,7 +23,6 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
 
-    @Override
     @Override
     public LoginResponse login(LoginRequest request) {
 
