@@ -25,4 +25,9 @@ public class AdminController {
     public void approveUser(@PathVariable Long id){
         adminService.approveUser(id);
     }
+
+    @PutMapping("/users/{id}/suspend")
+    public void suspendUser(@PathVariable Long id){
+        adminService.suspendUser(id);
+    }
 }
