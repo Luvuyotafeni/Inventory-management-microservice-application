@@ -30,4 +30,10 @@ public class AdminController {
     public void suspendUser(@PathVariable Long id){
         adminService.suspendUser(id);
     }
+
+    @PutMapping("/users/{id}/activate")
+    public void activateUser(@PathVariable Long id){
+        adminService.activateUser(id);
+    }
+
 }
