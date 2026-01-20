@@ -1,5 +1,6 @@
 package com.rss.InventoryManagementSystemUserService.controller;
 
+import com.rss.InventoryManagementSystemUserService.dto.request.ChangeRoleRequest;
 import com.rss.InventoryManagementSystemUserService.dto.response.AdminUserResponse;
 import com.rss.InventoryManagementSystemUserService.service.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,14 @@ public class AdminController {
     @PutMapping("/users/{id}/activate")
     public void activateUser(@PathVariable Long id){
         adminService.activateUser(id);
+    }
+
+    @PutMapping("/users/{id}/role")
+    public void changeUserRole(
+            @PathVariable Long id,
+            @RequestBody ChangeRoleRequest request
+    ){
+        adminService.changeRole(id, request.role());
     }
 
 }
