@@ -4,9 +4,7 @@ import com.rss.InventoryManagementSystemUserService.dto.response.AdminUserRespon
 import com.rss.InventoryManagementSystemUserService.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class AdminController {
     @GetMapping("/users")
     public List<AdminUserResponse> getAllUsers(){
         return adminService.getAllUsers();
+    }
+
+    @PutMapping("/users/{id}/approve")
+    public void approveUser(@PathVariable Long id){
+        adminService.approveUser(id);
     }
 }
