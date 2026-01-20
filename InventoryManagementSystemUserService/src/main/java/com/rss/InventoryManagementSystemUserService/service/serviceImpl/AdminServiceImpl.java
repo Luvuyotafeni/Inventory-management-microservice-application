@@ -73,7 +73,8 @@ public class AdminServiceImpl implements AdminService {
         user.setRole(role);
     }
 
-    private User getUser(Long userId) {
+    @Override
+    public User getUser(Long userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() ->
                         new RuntimeException("User not found with id: " + userId));
