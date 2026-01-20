@@ -1,6 +1,7 @@
 package com.rss.InventoryManagementSystemUserService.service.serviceImpl;
 
 import com.rss.InventoryManagementSystemUserService.Enum.Role;
+import com.rss.InventoryManagementSystemUserService.Enum.UserStatus;
 import com.rss.InventoryManagementSystemUserService.dto.response.AdminUserResponse;
 import com.rss.InventoryManagementSystemUserService.repository.UserRepository;
 import com.rss.InventoryManagementSystemUserService.service.AdminService;
@@ -26,8 +27,8 @@ public class AdminServiceImpl implements AdminService {
                         user.getId(),
                         user.getEmail(),
                         user.getRole().name(),
-                        user.isEnabled(),
-                        user.isSuspended()
+                        user.getStatus() == UserStatus.APPROVED,
+                        user.getStatus() == UserStatus.SUSPENDED
                 ))
                 .toList();
     }
